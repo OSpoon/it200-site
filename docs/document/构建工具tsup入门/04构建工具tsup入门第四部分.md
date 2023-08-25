@@ -132,8 +132,6 @@ cd code04 && npm run dev
 
 PS：代码参照[1024Code](https://1024code.com/codecubes/qdVek07)中的code04部分；
 
-<PreviewCode url="https://1024code.com/embed-ide/@小鑫同学/qdVek07" />
-
 ## 总结
 
 关于 tsup 的内容就暂时告一段落了，在文中的部分源码并为贴出，因为这些并非关键代码，每个小节给出的在线源码均可以配合文中的配置进行运行查看，更多的 tsup 内容期待在实战中发掘吧，下一个主题见~

@@ -151,8 +151,6 @@ export default defineConfig({
 })
 ```
 
-<PreviewCode url="https://1024code.com/embed-ide/@小鑫同学/444X3Zq" />
-
 ## 总结
 
 这一节的内容就到此结束了，那么你知道 `tsup` 能干什么了吗？配置文件是不是可以自由利用了？多入口编译在如同组件库分包编译时就会用到，你还能想到 `tsup` 的什么应用场景呢？

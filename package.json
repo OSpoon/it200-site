@@ -5,6 +5,9 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.5.6",
+    "fs-extra": "^11.1.1",
     "vitepress": "^1.0.0-rc.4"
   }
 }
