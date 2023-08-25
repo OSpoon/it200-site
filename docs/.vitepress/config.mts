@@ -28,10 +28,8 @@ export default defineConfig({
       provider: "local",
     },
     footer: {
-      message:
-        '<a target="_blank" href="https://beian.miit.gov.cn">晋ICP备15003329号-3</a>',
       copyright:
-        'Copyright © 2023-present <a target="_blank" href="https://github.com/OSpoon">前端小鑫同学</a>',
+        'Copyright © <a target="_blank" href="https://beian.miit.gov.cn">晋ICP备15003329号-3</a>',
     },
   },
 });
