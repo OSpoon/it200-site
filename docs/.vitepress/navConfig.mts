@@ -24,7 +24,7 @@ async function genNavItems(dir) {
 export async function nav(): Promise<DefaultTheme.NavItem[]> {
   return [
     {
-      text: "写作之路",
+      text: "我的博客",
       items: await genNavItems(blog),
     },
     {
