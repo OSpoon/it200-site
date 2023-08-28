@@ -11,7 +11,7 @@ hero:
     alt: 前端小鑫同学
   actions:
     - theme: brand
-      text: 写作之路
+      text: 我的博客
       link: /blog/readme
     - theme: alt
       text: 系列开发教程
