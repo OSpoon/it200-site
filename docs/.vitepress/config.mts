@@ -21,7 +21,10 @@ export default defineConfig({
     },
     nav: await nav(),
     sidebar: await sidebar(),
-    socialLinks: [{ icon: "github", link: "https://github.com/ospoon" }],
+    socialLinks: [
+      { icon: "github", link: "https://github.com/ospoon" },
+      { icon: "discord", link: "https://discord.gg/gqD6fGm3" },
+    ],
     outlineTitle: "目录:",
     outline: "deep",
     search: {
