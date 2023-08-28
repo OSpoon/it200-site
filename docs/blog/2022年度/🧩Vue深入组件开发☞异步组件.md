@@ -10,6 +10,10 @@ tags:
 ---
 
 :::tip
+>🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
+:::
+
+:::tip
 在前端开发中提到按需加载我们通常指的是路由配置的时候通过 webpack 提供的 import 函数来异步加载页面级别的组件，当路由被实际访问的时候才去加载对应组件的资源。但随着页面组件内部的模块划分增加，要想保持优秀的页面加载效率我们不得不考虑页面组件内部进行按需加载，那么在 Vue 中defineAsyncComponent()方法为我们提供了这样的能力。
 :::
 
@@ -22,7 +26,7 @@ tags:
 
 ## 写作背景：
 
-&ensp;&ensp;&ensp;&ensp; 在前端开发中提到按需加载我们通常指的是路由配置的时候通过 **webpack** 提供的 **import** 函数来异步加载页面级别的组件，当路由被实际访问的时候才去加载对应组件的资源。但随着页面组件内部的模块划分增加，要想保持优秀的页面加载效率我们不得不考虑页面组件内部进行按需加载，那么在 **Vue** 中`defineAsyncComponent()`方法为我们提供了这样的能力。
+在前端开发中提到按需加载我们通常指的是路由配置的时候通过 **webpack** 提供的 **import** 函数来异步加载页面级别的组件，当路由被实际访问的时候才去加载对应组件的资源。但随着页面组件内部的模块划分增加，要想保持优秀的页面加载效率我们不得不考虑页面组件内部进行按需加载，那么在 **Vue** 中`defineAsyncComponent()`方法为我们提供了这样的能力。
 
 ## API 示例：
 
@@ -60,7 +64,7 @@ const AsyncComp = defineAsyncComponent({
 
 ### 演示项目结构
 
-&ensp;&ensp;&ensp;&ensp; 下面是这次实验项目的组件结构，在 **App** 组件中依次导入 **TitleComp**、**BannerComp**、**NoticeComp**、**FavoriteListComp**，在 **App** 预览模式下可以看到页面已经被撑满了一屏，我们还有一个 **TodoListComp** 组件因为内部存在很多的**资源**、**子组件**，所以考虑在不需要与它**发生交互**的时候就不要加载相关资源。
+下面是这次实验项目的组件结构，在 **App** 组件中依次导入 **TitleComp**、**BannerComp**、**NoticeComp**、**FavoriteListComp**，在 **App** 预览模式下可以看到页面已经被撑满了一屏，我们还有一个 **TodoListComp** 组件因为内部存在很多的**资源**、**子组件**，所以考虑在不需要与它**发生交互**的时候就不要加载相关资源。
 
 ```
 ├─App.vue
@@ -86,7 +90,7 @@ const AsyncComp = defineAsyncComponent({
 
 ### 封装useLazyComp函数：
 
-&ensp;&ensp;&ensp;&ensp; 使用组合式函数来封装一个公用的异步加载组件工具，入参需要提供包裹 **TodoListComp** 的容器 **target** 和 组件实际导入的 **Uri**，出参需要提供需要展示的**控制标识**和异步导入的**组件对象**。
+使用组合式函数来封装一个公用的异步加载组件工具，入参需要提供包裹 **TodoListComp** 的容器 **target** 和 组件实际导入的 **Uri**，出参需要提供需要展示的**控制标识**和异步导入的**组件对象**。
 
 1.  **defineAsyncComponent**：实现组件异步加载；
 1.  **useIntersectionObserver**：监听指定DOM是否出现在视口；
@@ -121,7 +125,7 @@ export function useLazyComp(target, compUri) {
 
 ### 使用useLazyComp函数：
 
-&ensp;&ensp;&ensp;&ensp; 在 **App** 中使用 **useLazyComp** 实现 **TodoListComp** 按需异步加载，因为导出的组件名都是 **AsyncComp**，所以在对象解构的时候进行重命名操作，方便在 **template** 使用：
+在 **App** 中使用 **useLazyComp** 实现 **TodoListComp** 按需异步加载，因为导出的组件名都是 **AsyncComp**，所以在对象解构的时候进行重命名操作，方便在 **template** 使用：
 
 ```
 <script setup lang="ts">
@@ -157,7 +161,7 @@ const { isVisible, AsyncComp: AsyncTodoListComp } = useLazyComp(
 
 ## 结语：
 
-&ensp;&ensp;&ensp;&ensp; 在 VueUse 中提供了很多实用的工具函数，有关于浏览器、传感器、动画、状态、等等，我们可以选择使用，在本次的案例中就使用了`useIntersectionObserver()`来实现 DOM 出现在视口的监听，强烈推荐~
+在 VueUse 中提供了很多实用的工具函数，有关于浏览器、传感器、动画、状态、等等，我们可以选择使用，在本次的案例中就使用了`useIntersectionObserver()`来实现 DOM 出现在视口的监听，强烈推荐~
 
 * * *
 

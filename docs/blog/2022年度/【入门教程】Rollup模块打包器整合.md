@@ -1,42 +1,28 @@
----
-title: 【入门教程】Rollup模块打包器整合  
-date: '2022-07-26 22:05'
-sidebar: 'auto'
-categories:
- - Compiler
-tags:
- - Rollup
----
+# 【入门教程】Rollup模块打包器整合
 
 :::tip
-Rollup 是一个用于 JavaScript 的模块打包器，它将小段代码编译成更大更复杂的东西，例如库或应用程序。它对 JavaScript 的 ES6 修订版中包含的代码模块使用新的标准化格式，而不是以前的特殊解决方案，例如 CommonJS 和 AMD。 ES 模块让您可以自由无缝地组合您最喜欢的库中最有用的单个函数。这最终将在任何地方本地实现，但 Rollup 让您今天就可以做到。————《rollupjs.org》
+>🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
 
-<!-- more -->
-
-> Rollup 是一个用于 JavaScript 的模块打包器，它将小段代码编译成更大更复杂的东西，例如库或应用程序。它对 JavaScript 的 ES6 修订版中包含的代码模块使用新的标准化格式，而不是以前的特殊解决方案，例如 CommonJS 和 AMD。 ES 模块让您可以自由无缝地组合您最喜欢的库中最有用的单个函数。这最终将在任何地方本地实现，但 Rollup 让您今天就可以做到。————《rollupjs.org》
+Rollup 是一个用于 JavaScript 的模块打包器，它将小段代码编译成更大更复杂的东西，例如库或应用程序。它对 JavaScript 的 ES6 修订版中包含的代码模块使用新的标准化格式，而不是以前的特殊解决方案，例如 CommonJS 和 AMD。 ES 模块让您可以自由无缝地组合您最喜欢的库中最有用的单个函数。这最终将在任何地方本地实现，但 Rollup 让您今天就可以做到。————《rollupjs.org》
 
 ## 特点：
----
 
 1.  选用ES6标准模块化格式；
 2.  支持静态分析导入代码进行Tree-Shaking。
 
 ## 兼容：
----
 
 1.  支持导入CommonJs模块；
 2.  方便使用到CommonJS模块的工具，如：Node.js、webpack。
 
 ## ES 模块语法：
---------
 
 思维导图地址：[es模块语法](https://link.juejin.cn/?target=https%3A%2F%2Fwww.processon.com%2Fview%2Flink%2F625fda48f346fb0727870787 "https://www.processon.com/view/link/625fda48f346fb0727870787")
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/12d63571960649b998cf4d228f7fcd53~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281459718.png)
 
 ## 快速开始：
------
 
 ### 常见编译输出风格：
 
@@ -237,7 +223,6 @@ console.log(main.hello());
 ```
 
 ## 使用配置文件：
--------
 
 虽然在命令行可以完成大量的编译配置，但是同样提供了通过配置文件的方式来进行简化。
 
@@ -526,7 +511,6 @@ export default {
 |  | \--no-strict |  | Don't emit `"use strict";`in the generated modules |
 
 ## 编译完整版流程：
---------
 
 ### 准备基础环境：
 

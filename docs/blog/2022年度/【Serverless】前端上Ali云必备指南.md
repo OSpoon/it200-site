@@ -1,48 +1,30 @@
----
-title: 【Serverless】前端上 Ali 云必备指南 
-date: '2022-08-08 16:14'
-sidebar: 'auto'
-categories:
- - 实战案例
-tags:
- - Serverless
- - 微信SDK授权
- - Node
----
+# 【Serverless】前端上Ali云必备指南 
 
 :::tip
-原本早就该写完了微信 SDK 授权服务上云计划由于对 Ali 云函数计算 FC 的不熟悉遇到了很多的坑，再前面的文章中还吐槽了一通。在服务顺利跑通后，这回实打实的来总结一下顺利上云的保守指南~
+>🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
-
-<!-- more -->
-
-## 1. 前言
-------
-
-> 大家好，我是[小鑫同学](https://juejin.cn/user/3966693685871694 "https://juejin.cn/user/3966693685871694")。一位从事过**Android开发**、**混合开发**，现在长期从事**前端开发**的编程爱好者，**我觉得在编程之路上最重要的是知识的分享，所谓三人行必有我师**。所以我开始在社区持续输出我所了解到、学习到、工作中遇到的各种编程知识，欢迎有想法、有同感的伙伴加我[fe-xiaoxin](https://juejin.cn/pin/7126196941574111262 "https://juejin.cn/pin/7126196941574111262")微信交流~
 
 原本早就该写完了微信 SDK 授权服务上云计划由于对 Ali 云函数计算 FC 的不熟悉遇到了很多的坑，再前面的文章中还吐槽了一通。在服务顺利跑通后，这回实打实的来总结一下顺利上云的保守指南~
 
 ## 2. 创建函数计算应用/服务/函数
-------------------
 
 > 项目基于 Node.js 技术栈的 egg.js 服务端项目模板搭建授权服务
 
 ### 2.1 选择服务模板：
 
-登陆Ali[云函数计算 FC 应用](https://link.juejin.cn/?target=https%3A%2F%2Ffcnext.console.aliyun.com%2Fapplications "https://fcnext.console.aliyun.com/applications")控制台，选择【通过模板创建应用】，在下面的选项选中Web开发框架后搜索 [\*\*Egg.js \*\*](https://link.juejin.cn/?target=https%3A%2F%2Fwww.eggjs.org%2Fzh-CN%2F "https://www.eggjs.org/zh-CN/")官方模板。 ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ac67807b00bb4d18b960f3ff17d46756~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+登陆Ali[云函数计算 FC 应用](https://link.juejin.cn/?target=https%3A%2F%2Ffcnext.console.aliyun.com%2Fapplications "https://fcnext.console.aliyun.com/applications")控制台，选择【通过模板创建应用】，在下面的选项选中Web开发框架后搜索 [\*\*Egg.js \*\*](https://link.juejin.cn/?target=https%3A%2F%2Fwww.eggjs.org%2Fzh-CN%2F "https://www.eggjs.org/zh-CN/")官方模板。 ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281431355.png)
 
 ### 2.2 立即创建：
 
 > 由于在线 IDE 在简单尝试后感觉还是不太利于调试，尤其是对 egg.js 和函数计算 FC 都还不是很熟悉的伙伴不建议直接在在线 IDE 中开发。
 
-#### ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d6e24fb4c73d459394a7e2d2addcc981~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)2.2.1 部署类型：
+#### ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281432284.png)2.2.1 部署类型：
 
 我们选择经常使用的一个代码托管平台来【通过代码仓库部署】 ，【仓库用户/组织】在第一次使用的时候需要跳转到托管平台进行一次授权~
 
 #### 2.2.2 触发方式：
 
-【触发方式】可以选择当代码推送至 master 分之后拉取并构建，也可以选择发布 Release 后构建，我认为选择默认的代码推送 master 后构建是符合学习阶段的~ ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ee43b1837a349aebb1a2e4fba1be9dc~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+【触发方式】可以选择当代码推送至 master 分之后拉取并构建，也可以选择发布 Release 后构建，我认为选择默认的代码推送 master 后构建是符合学习阶段的~ ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281432358.png)
 
 #### 2.2.3 服务名&函数名：
 
@@ -50,13 +32,13 @@ tags:
 
 #### 2.2.4 等待创建：
 
-创建应用包括了同步模板代码到你所选的托管仓库，在 Ali 函数计算 FC 开辟空间来创建应用，完成创建后开始执行部署工作~ ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b1c80bcc73864168a83905ec93671d5a~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image) 部署完成后在当前应用的详情页面或应用列表页面可以通过提供的域名访问Eggjs 提供的默认首页~ ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/134609949f064eb08dded5574e47a1f0~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+创建应用包括了同步模板代码到你所选的托管仓库，在 Ali 函数计算 FC 开辟空间来创建应用，完成创建后开始执行部署工作~ ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281432446.png) 部署完成后在当前应用的详情页面或应用列表页面可以通过提供的域名访问Eggjs 提供的默认首页~ ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281432027.png)
 
 ### 2.3 必要的配置修改：
 
 #### 2.3.1 自定义域名：
 
-如果你有阿里云的域名的话可以在【高级功能】-【域名管理】-【添加自定义域名】，在域名解析的时候通常解析二级域名而不是直接解析到主域名下，我的主域名是 [it200.cn](https://link.juejin.cn/?target=http%3A%2F%2Fit200.cn "http://it200.cn")，待解析的二级域名使用了 [wx.it200.cn](https://link.juejin.cn/?target=http%3A%2F%2Fwx.it200.cn "http://wx.it200.cn")。 路由配置选择刚创建的应用时填写的服务名和函数名，版本使用最新的LATSET版本~ ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a189cb8e530544b085f6af0460dbdad6~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image) **域名解析**简要说一下：当要使用一个自己的域名（自定义域名）去代替另一个域名（默认提供域名）时，记录类型需要选择 **CNAME**，**主记录**只需要填写二级部分，**解析线路**不需要修改，**记录值**就是被代理的域名，配置解析后你就可以稍等片刻去尝试访问了~ ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fa27f88cbbb245b3ab904c6919200745~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+如果你有阿里云的域名的话可以在【高级功能】-【域名管理】-【添加自定义域名】，在域名解析的时候通常解析二级域名而不是直接解析到主域名下，我的主域名是 [it200.cn](https://link.juejin.cn/?target=http%3A%2F%2Fit200.cn "http://it200.cn")，待解析的二级域名使用了 [wx.it200.cn](https://link.juejin.cn/?target=http%3A%2F%2Fwx.it200.cn "http://wx.it200.cn")。 路由配置选择刚创建的应用时填写的服务名和函数名，版本使用最新的LATSET版本~ ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281433580.png) **域名解析**简要说一下：当要使用一个自己的域名（自定义域名）去代替另一个域名（默认提供域名）时，记录类型需要选择 **CNAME**，**主记录**只需要填写二级部分，**解析线路**不需要修改，**记录值**就是被代理的域名，配置解析后你就可以稍等片刻去尝试访问了~ ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281433243.png)
 
 #### 2.3.2 环境变量配置及函数中读取：
 
@@ -76,14 +58,13 @@ router.get('/env', controller.home.getEnv);
 
 ```
 
-推送代码并等待重新部署后配置如下环境变量，环境变量在【服务列表】-【服务 xxx 详情】-【函数管理】-【函数详情】-【**函数配置**】中，正常通过访问[获取 ENV](https://link.juejin.cn/?target=http%3A%2F%2Fwx.it200.cn%2Fenv "http://wx.it200.cn/env")接口将会在浏览器中输出了配置的 **APPID** 对应的值~ ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/44d75246d8854a968af137201832b629~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+推送代码并等待重新部署后配置如下环境变量，环境变量在【服务列表】-【服务 xxx 详情】-【函数管理】-【函数详情】-【**函数配置**】中，正常通过访问[获取 ENV](https://link.juejin.cn/?target=http%3A%2F%2Fwx.it200.cn%2Fenv "http://wx.it200.cn/env")接口将会在浏览器中输出了配置的 **APPID** 对应的值~ ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281434454.png)
 
 #### 2.3.3 函数触发器支持 POST：
 
-使用过 Egg.js搭建服务的伙伴会知道 Egg.js 默认开启的 [CSRF](https://link.juejin.cn/?target=https%3A%2F%2Fwww.eggjs.org%2Fzh-CN%2Fcore%2Fsecurity%23%25E5%25AE%2589%25E5%2585%25A8%25E5%25A8%2581%25E8%2583%2581-csrf-%25E7%259A%2584%25E9%2598%25B2%25E8%258C%2583 "https://www.eggjs.org/zh-CN/core/security#%E5%AE%89%E5%85%A8%E5%A8%81%E8%83%81-csrf-%E7%9A%84%E9%98%B2%E8%8C%83") 安全策略，当我们发起 POST 请求后会肯快在控制台收到 403 拒绝访问的状态码，但当我去关闭 CSRF 策略后依然收到了 403 的状态码，一度我怀疑这个配置不允许修改，在咨询 ali 技术后知道要想使用 POST 方式来触发接口需要做单独的配置~ ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f899ec3fa1504bc9bc68125e97a58fe8~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image) ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/45cdc4e0aa984a2c89a4cab74d6aa937~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+使用过 Egg.js搭建服务的伙伴会知道 Egg.js 默认开启的 [CSRF](https://link.juejin.cn/?target=https%3A%2F%2Fwww.eggjs.org%2Fzh-CN%2Fcore%2Fsecurity%23%25E5%25AE%2589%25E5%2585%25A8%25E5%25A8%2581%25E8%2583%2581-csrf-%25E7%259A%2584%25E9%2598%25B2%25E8%258C%2583 "https://www.eggjs.org/zh-CN/core/security#%E5%AE%89%E5%85%A8%E5%A8%81%E8%83%81-csrf-%E7%9A%84%E9%98%B2%E8%8C%83") 安全策略，当我们发起 POST 请求后会肯快在控制台收到 403 拒绝访问的状态码，但当我去关闭 CSRF 策略后依然收到了 403 的状态码，一度我怀疑这个配置不允许修改，在咨询 ali 技术后知道要想使用 POST 方式来触发接口需要做单独的配置~ ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281434692.png) ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281434103.png)
 
 ## 3. 移植WxSDK 授权代码：
------------------
 
 > 授权代码本地版本：`git clonne git@github.com:OSpoon/wechat4node.git`
 
@@ -218,7 +199,6 @@ export default class WeChat extends Service {}
 ```
 
 ## 4. 验证云函数执行情况：
---------------
 
 ### 4.1 创建 Vue 项目：
 
@@ -299,13 +279,8 @@ axios
 
 ### 4.4 验证云函数执行：
 
-在微信开发者工具中正常打开前端项目页面后，会先直接 **token 获取**，**票据获取**，**合成验签**三步，在前端拿到验签数据后正常初始化 wx.config ，并提示授权成功~ ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2964e52e7b294111afeec0c12dd2805f~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+在微信开发者工具中正常打开前端项目页面后，会先直接 **token 获取**，**票据获取**，**合成验签**三步，在前端拿到验签数据后正常初始化 wx.config ，并提示授权成功~ ![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281435646.png)
 
 ## 5. 总结
-------
 
 微信 SDK 授权服务的上云就算是暂时搞定了，前前后后折腾的时间不短，尝试了多次，这一次是最顺利的，云函数在没有服务器的情况下对于前端开发者应该还是很友好的（相比于服务器操作来说），要不要一起来踩坑呢？后面还会对接上一篇的【消息通知】来实打实的将这个服务应用起来~
-
-* * *
-
-**如果看完觉得有收获，欢迎点赞、评论、分享支持一下。你的支持和肯定，是我坚持写作的动力~** 最后可以关注我@小鑫同学。欢迎[点此扫码加我微信](https://juejin.cn/pin/7126196941574111262 "https://juejin.cn/pin/7126196941574111262")[fe-xiaoxin](https://juejin.cn/pin/7126196941574111262 "https://juejin.cn/pin/7126196941574111262")交流，共同进步（还可以帮你**fix**🐛）~

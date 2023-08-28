@@ -9,6 +9,10 @@ tags:
 ---
 
 :::tip
+>🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
+:::
+
+:::tip
 在上一篇[【入门】你连Babel都不会配？那插件不成乱装了](https://juejin.cn/post/7129535563639554085 "https://juejin.cn/post/7129535563639554085")中讲述了 babel 的使用和插件/预设的配置，这一篇我想写写 Babel 插件开发的学习过程，在翻找资料的时候发现的这个可能已经过时的 CLI 工具， 那么就跟随我来快速搞定第一个 Babel 插件吧~
 :::
 
@@ -22,7 +26,6 @@ tags:
 在上一篇[【入门】你连Babel都不会配？那插件不成乱装了](https://juejin.cn/post/7129535563639554085 "https://juejin.cn/post/7129535563639554085")中讲述了 babel 的使用和插件/预设的配置，这一篇我想写写 Babel 插件开发的学习过程，在翻找资料的时候发现的这个可能已经过时的 CLI 工具， 那么就跟随我来快速搞定第一个 Babel 插件吧~
 
 ## 2. 环境/资料准备？
-------------
 
 ### 2.1 必备工具：
 
@@ -36,7 +39,6 @@ tags:
 3.  [Babel 插件通关秘籍](https://juejin.cn/book/6946117847848321055?suid=3966693685871694&source=ios "https://juejin.cn/book/6946117847848321055?suid=3966693685871694&source=ios")；
 
 ## 3. 第一个 Babel 插件：
------------------
 
 **对代码块中 console 在执行时可以输出所在的代码行数**，我们的例子也是 COPY 自 Babel 插件通过秘籍的第一个用例，也推荐详细去学习一下~
 
@@ -189,7 +191,6 @@ expect(actual.trim().replace(/\s/g,"")).toEqual(expected.trim().replace(/\s/g,""
 ![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c6bb74b301e4c4886cd7e7082c5f7d2~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image?)
 
 ## 4. 升级优化插件：
------------
 
 ### 4.1 使用@babel/generator来将 AST 转为 Code：
 
@@ -232,7 +233,6 @@ export default function ({ types: t }) {
 ```
 
 ## 5. 升级babel-plugin-x：
----------------------
 
 目前最近的Babel插件版本（v7+）都采用Ts编写，并且风格略有不同，在Ts中使用types相关的API也更加容易上手，所以更新后的Cli将支持这一风格的编写~
 

@@ -1,25 +1,8 @@
----
-title: 【uniCloud】云对象的应用与提升
-date: '2022-07-02 15:15'
-sidebar: 'auto'
-categories:
- - 
-tags:
- - 
----
+# 【uniCloud】云对象的应用与提升
 
 :::tip
-uniCloud 是 DCloud 联合阿里云、腾讯云，为开发者提供的基于 serverless 模式和 js 编程的云开发平台。
+>🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
-
-<!-- more -->
-
-## 前言
-------
-
-大家好，我是[小鑫同学](https://it200.cn/ "https://it200.cn/")。一位从事过**Android开发**、**混合开发**，现在长期从事**前端开发**的编程爱好者，**我觉得在编程之路上最重要的是知识的分享，所谓三人行必有我师**。所以我开始在社区持续输出我所了解到、学习到、工作中遇到的各种编程知识，欢迎有想法、有同感的伙伴加我[fe-xiaoxin](https://it200.cn/ "https://it200.cn/")微信交流~
-
-## uniCloud简介：
 
 uniCloud 是 DCloud 联合阿里云、腾讯云，为开发者提供的基于 serverless 模式和 js 编程的云开发平台。
 
@@ -37,15 +20,15 @@ uniCloud 是 DCloud 联合阿里云、腾讯云，为开发者提供的基于 se
 
 #### 2. 创建云服务空间，需要我们跳转到 [web 控制台](https://unicloud.dcloud.net.cn/cloud/function)自行创建：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cf8f066993484b18880a6162d10e9b74~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281437391.png)
 
 #### 3. 关联云服务空间，当刷新到刚创建的云服务空间后就可以关联到项目了：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ce6fdf6246534cc7ac75b7ffcee1aeb5~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281437504.png)
 
 #### 4. 右击项目中uniCloud-aliyun/cloudfunctions目录创建云对象：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/67c5abfd57c74344bf5463e8dad6b66a~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281437118.png)
 
 #### 5. 为新建的 todo 云对象添加一个 add 方法：
 
@@ -77,7 +60,7 @@ module.exports = {
 
 #### 1. 编写一个触发 add 的按钮，并在 add 函数中导入云对象“uniCloud.importObject('')”；
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9eb11b2b02ea43cc828377bb61cac810~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281437795.png)
 
 #### 2. HBuilderX 自动提示了我们刚才编写的云对象，我们选择即可；
 
@@ -133,13 +116,13 @@ export default {
 
 #### 1. 将 uni-app 项目运行到内置浏览器：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fbc51872fc0943b583079faae3ffe128~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281438404.png)
 
 #### 2. 点击添加后在控制台就看到了发送到云对象的参数和返回的结果了：
 
 注意：这里默认启动勾选的是连接本地云函数，在下面h5 运行控制台中可以切换为云端云函数（部署后切换）。
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e581c92035f24570ac04e394218eaff2~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281438411.png)
 
 ### 总结特点：
 
@@ -192,7 +175,7 @@ module.exports = {
 }
 ```
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5f59cab1cc4844419b4c0366fb4807b0~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308281438433.png)
 
 ## 云对象的调用：
 
@@ -256,12 +239,6 @@ uniCloud.importObject('todo', {
 
 ## 总结：
 
-> uniCloud的服务器与客户端交互的方式有云函数、云对象、clientDB三种方式，但云对象的推出就将云函数抛到了一边，我们除了有数据库操作的时候优先使用 clientDB 的方式外，当我们遇到不宜在前端公开的业务逻辑的编写优先采用云对象。
+uniCloud的服务器与客户端交互的方式有云函数、云对象、clientDB三种方式，但云对象的推出就将云函数抛到了一边，我们除了有数据库操作的时候优先使用 clientDB 的方式外，当我们遇到不宜在前端公开的业务逻辑的编写优先采用云对象。
 
-> 这一篇我们从云服务空间的创建、云对象的创建、云对象的调用、云对象的统一拦截处理、云对象的 UI 控制等几个方便介绍的它的使用，我们在实际编写的时候也要调研对应服务空间的特点和支持的情况，就比如说我想使用 **puppeteer** 在云端事件网页截图，就受服务空间大小的限制无法使用。
-
-* * *
-
-**如果看完觉得有收获，欢迎点赞、评论、分享支持一下。你的支持和肯定，是我坚持写作的动力~**
-
-最后可以关注我@小鑫同学。欢迎[点此扫码加我微信](https://it200.cn/ "https://it200.cn/")[fe-xiaoxin](https://it200.cn/ "https://it200.cn/")交流，共同进步（还可以帮你**fix**🐛）~
+这一篇我们从云服务空间的创建、云对象的创建、云对象的调用、云对象的统一拦截处理、云对象的 UI 控制等几个方便介绍的它的使用，我们在实际编写的时候也要调研对应服务空间的特点和支持的情况，就比如说我想使用 **puppeteer** 在云端事件网页截图，就受服务空间大小的限制无法使用。

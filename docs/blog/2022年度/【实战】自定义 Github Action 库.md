@@ -1,27 +1,11 @@
----
-title: 【实战】自定义 Github Action 库
-date: '2022-09-14 22:34'
-sidebar: 'auto'
-categories:
- - 实战案例
-tags:
- - Github
- - Action
- - Node
----
+# 【实战】自定义 Github Action 库
 
 :::tip
-我目前长期维护的两个静态站点是 个人博客 和 导航站点 ，这两个站点都采用的 AliOSS 对象存储来进行内容托管，我通常都是在本地编译出新的网站资源后通过执行发布 OSS 脚本来推送网站资源到 OSS 桶内，这种重复的工作做久了被迫就要进行自动化构建改造，这里我选择利用 Github 提供 workflows 来完成，我还会编写一个符合自己要求的 Action 库来辅助 workflows 工作，一起来看一下~
+>🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
 
-<!-- more -->
+我有两个站点都采用的 AliOSS 对象存储来进行内容托管，我通常都是在本地编译出新的网站资源后通过执行发布 OSS 脚本来推送网站资源到 OSS 桶内，这种重复的工作做久了被迫就要进行自动化构建改造，这里我选择利用 Github 提供 workflows 来完成，我还会编写一个符合自己要求的 Action 库来辅助 workflows 工作，一起来看一下~
 
----
-
-## 1. 前言
-> 大家好，我是[小鑫同学](https://it200.cn/)。一位从事过**Android开发**、**混合开发**，现在长期从事**前端开发**的编程爱好者，**我觉得在编程之路上最重要的是知识的分享，所谓三人行必有我师**。所以我开始在社区持续输出我所了解到、学习到、工作中遇到的各种编程知识，欢迎有想法、有同感的伙伴加我[fe-xiaoxin](https://it200.cn/)微信交流~
-
-我目前长期维护的两个静态站点是 [个人博客](https://it200.cn) 和 [导航站点](https://vp.it200.cn/) ，这两个站点都采用的 AliOSS 对象存储来进行内容托管，我通常都是在本地编译出新的网站资源后通过执行发布 OSS 脚本来推送网站资源到 OSS 桶内，这种重复的工作做久了被迫就要进行自动化构建改造，这里我选择利用 Github 提供 workflows 来完成，我还会编写一个符合自己要求的 Action 库来辅助 workflows 工作，一起来看一下~
 ## 2. auto-push-oss Action
 虽然在 Github 市场有推送 OSS 相关的 Action，但是我还是选择改造我运行了好多年的脚本来自定义符合自己要求的 Action 库。
 **编写步骤：**
@@ -204,11 +188,7 @@ jobs:
           accessKeySecret: ${{secrets.accessKeySecret}}
 ```
 ## 3. 总结
+
 编写完 Action 后成功也接入了 workflows ，往后就不再重复的执行构建命令和发布脚本了，只需要将修改的代码 PUSH 到 Github 后面的工作将自动完成~
-> 本文项目已推送至GitHub，欢迎克隆演示：`git clone git@github.com:OSpoon/auto-push-oss.git`
 
-
----
-
-**如果看完觉得有收获，欢迎点赞、评论、分享支持一下。你的支持和肯定，是我坚持写作的动力~**
-最后可以关注我@小鑫同学。欢迎[点此扫码加我微信](https://juejin.cn/pin/7126196941574111262)[fe-xiaoxin](https://it200.cn/)交流，共同进步（还可以帮你**fix**🐛）~
+本文项目已推送至GitHub，欢迎克隆演示：`git clone git@github.com:OSpoon/auto-push-oss.git`

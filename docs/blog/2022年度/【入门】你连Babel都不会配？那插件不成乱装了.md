@@ -1,33 +1,16 @@
----
-title: 【入门】你连Babel都不会配？那插件不成乱装了 
-date: '2022-08-09 00:01'
-sidebar: 'auto'
-categories:
- - Compiler
-tags:
- - Babel
----
+# 【入门】你连Babel都不会配？那插件不成乱装了
 
 :::tip
-如果你有项目搭建的需求，工具链开发的需求，那么 **Babel** 目前仍是一个前端工程师高频使用的产品，在各浏览器厂商纷纷拥抱**W3C**标准的时候还是会遇到需要将 **ES2015+** 的语法进行降级，使得可以在低版本的浏览器及其他环境中正常使用。
+>🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
-
-<!-- more -->
-
-## 1. 前言
-------
-
-大家好，我是[小鑫同学](https://juejin.cn/user/3966693685871694 "https://juejin.cn/user/3966693685871694")。一位从事过**Android开发**、**混合开发**，现在长期从事**前端开发**的编程爱好者，**我觉得在编程之路上最重要的是知识的分享，所谓三人行必有我师**。所以我开始在社区持续输出我所了解到、学习到、工作中遇到的各种编程知识，欢迎有想法、有同感的伙伴加我[fe-xiaoxin](https://juejin.cn/pin/7126196941574111262 "https://juejin.cn/pin/7126196941574111262")微信交流~
 
 如果你有项目搭建的需求，工具链开发的需求，那么 **Babel** 目前仍是一个前端工程师高频使用的产品，在各浏览器厂商纷纷拥抱**W3C**标准的时候还是会遇到需要将 **ES2015+** 的语法进行降级，使得可以在低版本的浏览器及其他环境中正常使用。
 
 ## 2. Babel 能搞什么？
----------------
 
 **Babel** 作为一款工具链产品可以辅助我们在JavaScript 编写时更放心的去使用一些较新的或最新的语法，对于浏览器或其他环境不能很好兼容的事情全部交给 **Babel** 自行处理，所以说 **Babel** 在我们编码的过程中主要起到了**语法转换**和 **Polyfill** 的功能。
 
 ## 3. MVP环境配置：
-------------
 
 这里的 MVP 指的是产品理论，指的是**最简可行化分析**，我们需要配置一个满足最基本 Babel 运行的项目环境。
 
@@ -202,7 +185,6 @@ var say = function say(value) {
 ```
 
 ## 4. 支持 TypeScript？
-------------------
 
 ### 4.1 在 src 目录下插入下面的源码：
 
@@ -259,16 +241,9 @@ console.log(person === null || person === void 0 ? void 0 : person.name);
 ```
 
 ## 5. 总结
-------
 
 1.  Babel 官网提供了 [ES2015+](https://link.juejin.cn/?target=https%3A%2F%2Fbabeljs.io%2Fdocs%2Fen%2Flearn "https://babeljs.io/docs/en/learn") 各语法的演示，我们可以对照各个语法和对应的插件来感受 Babel 语法转换的奥妙~
 2.  当我们与其它的**构建系统**、**框架**、**语言 API**搭配使用时还需要更多的配置来支持，可以在 [Using Babel](https://link.juejin.cn/?target=https%3A%2F%2Fbabeljs.io%2Fsetup "https://babeljs.io/setup") 查看。
 3.  我们还可以使用 [REPL](https://link.juejin.cn/?target=https%3A%2F%2Fbabeljs.io%2Frepl "https://babeljs.io/repl") 来在线查看语法的转换。
 
 本文项目已推送至GitHub，欢迎克隆演示：`git clone git@github.com:OSpoon/babel-study.git`
-
-* * *
-
-**如果看完觉得有收获，欢迎点赞、评论、分享支持一下。你的支持和肯定，是我坚持写作的动力~**
-
-最后可以关注我@小鑫同学。欢迎[点此扫码加我微信](https://juejin.cn/pin/7126196941574111262 "https://juejin.cn/pin/7126196941574111262")[fe-xiaoxin](https://juejin.cn/pin/7126196941574111262 "https://juejin.cn/pin/7126196941574111262")交流，共同进步（还可以帮你**fix**🐛）~
