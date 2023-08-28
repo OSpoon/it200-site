@@ -1,12 +1,4 @@
----
-title: 构建工具Gulp-lesson5
-date: '2022-05-30 20:32'
-sidebar: 'auto'
-categories:
- - 
-tags:
- - 
----
+# 构建工具Gulp-lesson5
 
 :::tip
 这一节我们将从下面这一段代码开始增加内容，来看一下 gulp 的一些产能常用插件和使用的方式。
