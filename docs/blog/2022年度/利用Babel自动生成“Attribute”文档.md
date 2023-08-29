@@ -1,26 +1,9 @@
----
-title: 利用Babel自动生成“Attribute”文档
-date: '2022-10-21 21:13'
-sidebar: 'auto'
-categories:
- - Compiler
-tags:
- - Babel
----
+# 利用Babel自动生成“Attribute”文档
 
 :::tip
 >🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
 
-:::tip
-利用**Babel**自动解析源码属性上的注释生成对应Markdown文档，这个场景的应用主要包括在组件库文档对组件属性的介绍中，这一篇就通过编写一个Babel插件来实现这个功能~
-:::
-
-<!-- more -->
-
-## 1. 前言
-
-大家好，我是[小鑫同学](https://it200.cn/ "https://it200.cn/")。一位从事过**Android开发**、**混合开发**，现在长期从事**前端开发**的编程爱好者，**我觉得在编程之路上最重要的是知识的分享，所谓三人行必有我师**。所以我开始在社区持续输出我所了解到、学习到、工作中遇到的各种编程知识，欢迎有想法、有同感的伙伴加我[fe-xiaoxin](https://it200.cn/ "https://it200.cn/")微信交流~
 
 利用**Babel**自动解析源码属性上的注释生成对应Markdown文档，这个场景的应用主要包括在组件库文档对组件属性的介绍中，这一篇就通过编写一个Babel插件来实现这个功能~
 ## 2. 开发自动生成属性文档插件
@@ -49,11 +32,11 @@ babel-plugin-auto-attr-doc
 └─ tsconfig.json            
 ```
 ### 2.2 转换思路详解：
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/431c6c036e8e40aaadda15021cbb0098~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290933995.png)
 
-- **2.2.1 转换过程：**利用**Babel**将**Typescript**脚本解析为**AST**，通过对**AST**结构分析抽离对应的注释部分，再拼接**Markdown**表格风格的语法；
-- **2.2.2 源码要求：**我们应该将组件涉及到对外提供的属性统一到对应的`types.ts`文件管理，分别导出对应的`type`字段；
-- **2.2.3 注释要求：**分别定义字段描述、类型、可选项、默认值4项，由于解析器关键词冲突原因，我们应该尽量避免；
+- **2.2.1 转换过程：** 利用 **Babel** 将 **Typescript** 脚本解析为 **AST** ，通过对 **AST** 结构分析抽离对应的注释部分，再拼接**Markdown**表格风格的语法；
+- **2.2.2 源码要求：** 我们应该将组件涉及到对外提供的属性统一到对应的`types.ts`文件管理，分别导出对应的`type`字段；
+- **2.2.3 注释要求：** 分别定义字段描述、类型、可选项、默认值4项，由于解析器关键词冲突原因，我们应该尽量避免；
 ```typescript
 /**
   * @cDescribe 类型
@@ -80,9 +63,9 @@ babel-plugin-auto-attr-doc
  export type IPlain = boolean;
 ```
 
-- **2.2.4 Markdown表格：**展示组件的属性、描述、类型、可选值和默认值这几项；
+- **2.2.4 Markdown表格：** 展示组件的属性、描述、类型、可选值和默认值这几项；
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b049a8637b8b408fb1c14cef4632deaa~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290933339.png)
 ### 2.3 单元测试用例：
 
 1. 准备插件待解析源码文件`source-code.ts`；
@@ -127,7 +110,7 @@ it(`should ${caseName.split("-").join(" ")}`, () => {
 - 在`(path.node.declaration as t.TypeAlias).id.name`中取属性名称；
 
 将注释文本通过**doctrine**模块解析为对象后和属性名合并对转换Markdown所需要的所有数据~
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/867f3a6c0f604decac6e500f8b62900e~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290933290.png)
 ### 2.5 插件开发过程：
 #### 2.5.1 定义Comment、ApiTable类型对象：
 ```typescript
@@ -247,14 +230,7 @@ const generateMD = (apidoc: Array<ApiTable>) => {
 };
 ```
 #### 2.5.6生成结果展示~
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bde96028dd0b4271a6d31d9f8eb5e2bf~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290933412.png)
 ## 3. 总结
 插件生成目前基本功能完成，注释解析可以通过Babel的插件选项来定义作为一个扩展方向，MD文件的生成可以通过对应工具转换，更多的输出文件类型也可以作为扩展方向，欢迎喜欢玩转Babel的小伙伴一起交流交流~
 > 已推送至GitHub，欢迎克隆演示：`git clone https://github.com/OSpoon/awesome-examples.git`
-
-
-* * *
-
-**如果看完觉得有收获，欢迎点赞、评论、分享支持一下。你的支持和肯定，是我坚持写作的动力~**
-
-最后可以关注我@小鑫同学。欢迎[点此扫码加我微信](https://it200.cn/ "https://it200.cn/")[fe-xiaoxin](https://it200.cn/ "https://it200.cn/")交流，共同进步（还可以帮你**fix**🐛）~

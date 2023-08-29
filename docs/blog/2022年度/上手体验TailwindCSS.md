@@ -1,25 +1,8 @@
----
-title: 上手体验TailwindCSS 
-date: '2022-07-05 22:46'
-sidebar: 'auto'
-categories:
- - More
-tags:
- - TailwindCSS
----
-
+# 上手体验TailwindCSS
 
 :::tip
 >🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
-
-:::tip
-在热火朝天的前端框架演进的进程中，大多数的人都把目光关注到了 JavaScript / TypeScript 的身上，TailwindCSS作为最有争议但也是最受欢迎的一个 CSS 框架的产品我们也来看一下它到底好不好用，有什么优势~
-:::
-
-<!-- more -->
-
-### 写作背景：
 
      在热火朝天的前端框架演进的进程中，大多数的人都把目光关注到了 JavaScript / TypeScript 的身上，TailwindCSS作为最有争议但也是最受欢迎的一个 CSS 框架的产品我们也来看一下它到底好不好用，有什么优势~
 
@@ -105,11 +88,11 @@ createApp(App).mount('#app')
 1.  [Tailwind CSS IntelliSense](https://link.juejin.cn/?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dbradlc.vscode-tailwindcss "https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss")支持自动完成、语法高亮、悬停预览、语法分析功能。
 2.  [PostCSS Language Support](https://link.juejin.cn/?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dcsstools.postcss "https://marketplace.visualstudio.com/items?itemName=csstools.postcss")支持css未知规则如tailwind中的 `@tailwind`、`@apply`、`@screen`。
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/093efb51fa7b4665af0134fdfb05a4ba~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290911227.png)
 
 3.  在`.vue`、.`html`文件中使用`@apply`仍提示未知规则，建议在已安装以上插件后再添加工作区配置禁止掉这个提示：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b8de1b3fcc846ed941f78478f936a3f~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290911745.png)
 
 ```
 {
@@ -151,7 +134,7 @@ module.exports = {
 
 ##### 使用Tailwind内置的功能类来实现下图的卡片样式：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f99170f21ed47ac9c471a934be89cb7~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290911798.png)
 
 1.  实现基础元素准备：
 
@@ -211,9 +194,9 @@ module.exports = {
 
      下面的两张设计图是在不同浏览器尺寸的下分别应该显示的样式，在 Tailwind 中提倡移动端优先的理念，我们应该使用不带任何断点的功能类来实现移动端应该显示的风格，在浏览器尺寸变化到下一个断点的时候来调整为 PC 端显示的布局。
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5bc29dd008b5462bad6ec4df0a3b759f~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290912798.png)
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a59efb20cf45492eaa877c2a03ee1b76~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
+![](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290912165.png)
 
 ##### 内置断点：
 

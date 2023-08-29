@@ -1,26 +1,8 @@
----
-title: 开发 Babel 插件可以试试这个 CLI 工具
-date: '2022-08-16 23:25'
-sidebar: 'auto'
-categories:
- - Compiler
-tags:
- - Babel
----
+# 开发 Babel 插件可以试试这个 CLI 工具
 
 :::tip
 >🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
-
-:::tip
-在上一篇[【入门】你连Babel都不会配？那插件不成乱装了](https://juejin.cn/post/7129535563639554085 "https://juejin.cn/post/7129535563639554085")中讲述了 babel 的使用和插件/预设的配置，这一篇我想写写 Babel 插件开发的学习过程，在翻找资料的时候发现的这个可能已经过时的 CLI 工具， 那么就跟随我来快速搞定第一个 Babel 插件吧~
-:::
-
-<!-- more -->
-
-## 1. 前言
-
-大家好，我是[小鑫同学](https://juejin.cn/user/3966693685871694 "https://juejin.cn/user/3966693685871694")。一位从事过**Android开发**、**混合开发**，现在长期从事**前端开发**的编程爱好者，**我觉得在编程之路上最重要的是知识的分享，所谓三人行必有我师**。所以我开始在社区持续输出我所了解到、学习到、工作中遇到的各种编程知识，欢迎有想法、有同感的伙伴加我[fe-xiaoxin](https://juejin.cn/pin/7126196941574111262 "https://juejin.cn/pin/7126196941574111262")微信交流~
 
 在上一篇[【入门】你连Babel都不会配？那插件不成乱装了](https://juejin.cn/post/7129535563639554085 "https://juejin.cn/post/7129535563639554085")中讲述了 babel 的使用和插件/预设的配置，这一篇我想写写 Babel 插件开发的学习过程，在翻找资料的时候发现的这个可能已经过时的 CLI 工具， 那么就跟随我来快速搞定第一个 Babel 插件吧~
 
@@ -104,7 +86,7 @@ export default class Clazz {
 
 [Astexplorer](https://link.juejin.cn/?target=https%3A%2F%2Fastexplorer.net%2F%23%2Fgist%2F763781d76b0d3f8486cdda748cd7dc39%2F232fda799045f748ecebbb5553589f722d15265b "https://astexplorer.net/#/gist/763781d76b0d3f8486cdda748cd7dc39/232fda799045f748ecebbb5553589f722d15265b")，我们在选中其中一条`console`语句后右侧窗口高亮了一片 **ExpressionStatement** 区域，我们需要的是被包裹在里面的调用表达式`CallExpression`，这`CallExpression`里面包含被调用表达式（`callee`） 调用参数（`arguments`）。
 
-![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0a306784425a4200b6f9cbdbf09762af~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image?)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290936177.png)
 
 1.  通过`callee`中包含的信息来判断是否符合我们要处理的位置；
 2.  读取`loc/start/line` 属性可以得到当前调用表达式所在行号；
@@ -187,7 +169,7 @@ expect(actual.trim().replace(/\s/g,"")).toEqual(expected.trim().replace(/\s/g,""
 
 ### 3.6 执行测试用例：
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0c6bb74b301e4c4886cd7e7082c5f7d2~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image?)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290936405.png)
 
 ## 4. 升级优化插件：
 
@@ -240,9 +222,3 @@ export default function ({ types: t }) {
 通过使用 `yo babel-plugin-x` 生成的插件模版来快速上手了第一个 babel插件，当你感受到了 babel 的作用后再去了解每个模块的作用，再去拆解每一块的功能也可能会更好~
 
 `babel-plugin` 源 `Cli` 插件已经多年不维护了，有个 BUG 的 PR 一直没有合并导致没法使用，所以我推了一个 `babel-plugin-x`来使用~
-
-* * *
-
-**如果看完觉得有收获，欢迎点赞、评论、分享支持一下。你的支持和肯定，是我坚持写作的动力~**
-
-最后可以关注我@小鑫同学。欢迎[点此扫码加我微信](https://juejin.cn/pin/7126196941574111262 "https://juejin.cn/pin/7126196941574111262")[fe-xiaoxin](https://juejin.cn/pin/7126196941574111262 "https://juejin.cn/pin/7126196941574111262")交流，共同进步（还可以帮你**fix**🐛）~

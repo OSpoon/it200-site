@@ -1,32 +1,14 @@
----
-title: 教学：制作 GitHub 同步近期博客卡片
-date: '2022-11-15 21:33'
-sidebar: 'auto'
-categories:
- - 实战案例
-tags:
- - Github
- - Node
----
+# 教学：制作 GitHub 同步近期博客卡片
 
 :::tip
 >🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
 
-:::tip
 这几天看到有小伙伴将自己近期更新的博客同步显示到了GitHub主页，这么有趣的小卡片我是一定要尝试一把的，完整的教程我已经整理好了，一起搞起来吧~
-:::
-
-<!-- more -->
-
-> 大家好，我是[小鑫同学](https://it200.cn/)。一位长期从事**前端开发**的编程爱好者，**我信奉编程最重要的是分享**。请跟随小鑫同学的步伐，一起带你畅游不一样的前端世界~
-
-
-这几天看到有小伙伴将自己近期更新的博客同步显示到了GitHub主页，这么有趣的小卡片我是一定要尝试一把的，完整的教程我已经整理好了，一起搞起来吧~
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668515823729-8fbd1a4a-4d82-45cf-9b98-d292140b8191.png#averageHue=%23fbfaf9&clientId=ub1b69c7f-1eb7-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=889&id=u30294b12&margin=%5Bobject%20Object%5D&name=image.png&originHeight=889&originWidth=1898&originalType=binary&ratio=1&rotation=0&showTitle=false&size=248832&status=done&style=none&taskId=u5a74b0ff-b4b6-46b2-801e-a9d1c2e10b2&title=&width=1898)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290940063.png)
 ## 2. 开始教程
 ### 2.1 实现流程：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668510461179-a9adf4ab-712a-4dc8-9d34-dc8c145df0a4.png#averageHue=%23f7f8f9&clientId=uf74140ce-b8c1-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=200&id=u2c328614&margin=%5Bobject%20Object%5D&name=image.png&originHeight=200&originWidth=760&originalType=binary&ratio=1&rotation=0&showTitle=false&size=33853&status=done&style=none&taskId=uca6c8e86-a073-4db4-b100-1a4e5a44a78&title=&width=760)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290942676.png)
 Github的主页装修主要讲的就是主页的Markdown文档，当我们访问Github的主页时，Markdown内嵌的`img`标签就会对文章卡片接口发起请求，经服务器对博客站点提供的`RSS`数据解析转换并生成卡片数据（`svg`）返回到Github，完成了博客卡片的一次渲染过程；
 ### 2.2 环境配置：
 
@@ -169,13 +151,13 @@ export default async (req: NowRequest, res: NowResponse) => {
 ### 3.4 `Vercel`部署：
 访问[https://vercel.com/new](https://vercel.com/new)页面开始新项目的部署，第一次部署完成后，后续将自动进行部署：
 选择你要部署的项目，比如说我刚创建的第一个项目，点击`import`：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668517891256-9217a53d-c836-41ca-a63a-41965a95668e.png#averageHue=%23f9f9f9&clientId=ub1b69c7f-1eb7-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=913&id=u016a813b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=913&originWidth=1899&originalType=binary&ratio=1&rotation=0&showTitle=false&size=159543&status=done&style=none&taskId=u80f0daa1-ab31-4135-bff8-c1bfd4b38a7&title=&width=1899)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290943038.png)
 不需要做更多的设置可以直接点击`Deploy`开始部署：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668517914689-c064ba51-16ba-4b96-89a2-bd6f24ca80b1.png#averageHue=%23faf9f9&clientId=ub1b69c7f-1eb7-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=867&id=u8208017e&margin=%5Bobject%20Object%5D&name=image.png&originHeight=867&originWidth=1898&originalType=binary&ratio=1&rotation=0&showTitle=false&size=70941&status=done&style=none&taskId=u6c4a1c21-3552-402d-95d9-5b0c88be359&title=&width=1898)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290944065.png)
 部署完成后就得到了项目的访问地址，如分配给我这个项目的[github-readme-recent-article.vercel.app](https://github-readme-recent-article.vercel.app/)：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668518010643-27956853-cf92-4190-ae4e-aaff41fbdf88.png#averageHue=%23fafafa&clientId=ub1b69c7f-1eb7-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=910&id=ua9f42205&margin=%5Bobject%20Object%5D&name=image.png&originHeight=910&originWidth=1902&originalType=binary&ratio=1&rotation=0&showTitle=false&size=87084&status=done&style=none&taskId=u15a85ed6-84a4-4b17-89c9-83df22274fa&title=&width=1902)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290944914.png)
 通过`get`形式获取序号`0`所对应的文章卡片：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668518118795-49af7fd7-2f1a-4048-acc0-2763ccfaa195.png#averageHue=%23fcfbfb&clientId=ub1b69c7f-1eb7-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=356&id=u41d3512f&margin=%5Bobject%20Object%5D&name=image.png&originHeight=356&originWidth=913&originalType=binary&ratio=1&rotation=0&showTitle=false&size=28634&status=done&style=none&taskId=uaf773501-f3b8-4f5e-b678-5bc17b15b1a&title=&width=913)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290944603.png)
 ## 4. 更新Github主页：
 > 加入如下的内容来获取近3篇写的博客的卡片吧~
 
@@ -194,13 +176,7 @@ export default async (req: NowRequest, res: NowResponse) => {
   <img src="https://github-readme-recent-article.vercel.app/blog/2">
 </a>
 ```
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668518321172-193dc039-21fe-4539-8736-ce35ef33225b.png#averageHue=%23fbfafa&clientId=ub1b69c7f-1eb7-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=765&id=u8747c51d&margin=%5Bobject%20Object%5D&name=image.png&originHeight=765&originWidth=905&originalType=binary&ratio=1&rotation=0&showTitle=false&size=94288&status=done&style=none&taskId=u95b7809b-2842-49b5-a11a-2f1195fc998&title=&width=905)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290944791.png)
 ## 3. 总结
 使用了`120`行左右的代码就实现了这个文章卡片在Github主页的展示，完整的代码已经上传至Github，欢迎你也尝试一下这个小巧的功能~
 > 本文项目已推送至GitHub，欢迎克隆演示：`git clone git@github.com:OSpoon/github-readme-recent-article.git`
-
-
----
-
-**如果看完觉得有收获，欢迎点赞、评论、分享支持一下。你的支持和肯定，是我坚持写作的动力~**
-最后可以关注我@小鑫同学。欢迎[点此扫码加我](https://it200.cn/)交流，共同进步（还可以帮你**fix**🐛）~

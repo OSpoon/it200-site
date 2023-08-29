@@ -1,26 +1,8 @@
----
-title: 搞一搞明白Vitepress的文档渲染基础
-date: '2022-10-21 21:12'
-sidebar: 'auto'
-categories:
- - Compiler
-tags:
- - Vitepress
----
+# 搞一搞明白Vitepress的文档渲染基础
 
 :::tip
 >🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
-
-:::tip
-**Vitepress**的文档渲染目的就是将程序员日常所写的**Markdown**文件编译为**Html**文件，并添加了更多的插件来丰富**MD**文件的功能，就比如说**Vuejs**组件在**MD**文件中渲染等等，为了我们可以在使用**Vitepress**的时候可以更随心所欲的定制一些功能，我们要先搞一搞明白**Vitepress**是如何将**MD**文档渲染成**HTML**的~
-:::
-
-<!-- more -->
-
-## 1. 前言
-
-大家好，我是[小鑫同学](https://it200.cn/ "https://it200.cn/")。一位从事过**Android开发**、**混合开发**，现在长期从事**前端开发**的编程爱好者，**我觉得在编程之路上最重要的是知识的分享，所谓三人行必有我师**。所以我开始在社区持续输出我所了解到、学习到、工作中遇到的各种编程知识，欢迎有想法、有同感的伙伴加我[fe-xiaoxin](https://it200.cn/ "https://it200.cn/")微信交流~
 
 **Vitepress**的文档渲染目的就是将程序员日常所写的**Markdown**文件编译为**Html**文件，并添加了更多的插件来丰富**MD**文件的功能，就比如说**Vuejs**组件在**MD**文件中渲染等等，为了我们可以在使用**Vitepress**的时候可以更随心所欲的定制一些功能，我们要先搞一搞明白**Vitepress**是如何将**MD**文档渲染成**HTML**的~
 ### 看完可以明白这3点？
@@ -29,7 +11,7 @@ tags:
 - [x] 如何支持代码块高亮；
 - [x] 如何实现自定义容器；
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c21871efe31b4b6597ecfde8fe7d276e~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290938725.png)
 [演示地址](https://www.awesomescreenshot.com/video/11781022?key=2451152c019ed7ecb5aa1dcacff7bd4b)
 ## 2. 实现MD文档转HTML文档
 ### 2.1 请按如下项目结构准备我们的实验环境~
@@ -136,7 +118,7 @@ md.use(require("markdown-it-container"), "warning", {
 })
 ```
 提示：通过`tokens[idx]`取到的数据如下图所示~
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2530d5c06c2648f4af92f6ca21b2daba~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308290939092.png)
 
 2. 上面的处理依旧是**MD**到**HTML**结构的转换，在自定义容器的时候我们预留的**css**名称，我们还是需要在输出`index.html`文件的时候自定义样式文档~
 ```typescript
@@ -173,9 +155,3 @@ ${output}
 ## 5. 总结
 通过使用`markdown-it`、`highlight.js`、`markdown-it-container`模块实现了**Markdown**到**HTML**的文档转换，代码块高亮和自定义容器，**VItepress**搭建的组件库文档中的组件渲染和源码展示功能就需要用到自定义容器的解析和组装自定义的**Vue**组件实现高级功能~
 > 本文项目已推送至GitHub，欢迎克隆演示：`git clone [https://github.com/OSpoon/awesome-examples.git](https://github.com/OSpoon/awesome-examples.git)`
-
-* * *
-
-**如果看完觉得有收获，欢迎点赞、评论、分享支持一下。你的支持和肯定，是我坚持写作的动力~**
-
-最后可以关注我@小鑫同学。欢迎[点此扫码加我微信](https://it200.cn/ "https://it200.cn/")[fe-xiaoxin](https://it200.cn/ "https://it200.cn/")交流，共同进步（还可以帮你**fix**🐛）~

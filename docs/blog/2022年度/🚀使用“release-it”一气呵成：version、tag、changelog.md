@@ -173,5 +173,3 @@ f. 询问是否推送到远程仓库；
 ## 6. 总结
 上面我们演示了使用`release-it`的很多功能，基本可以完成我们大多数项目的自动发布、打Tag、生成变更日志等工作，在[release-it Plugins](https://github.com/release-it/release-it#plugins)中还提供了一些比较不错的插件可以试用一下，比如说 [lerna-changelog](https://github.com/release-it-plugins/lerna-changelog) 和 [workspaces](https://github.com/release-it-plugins/workspaces) 等，期待在pnpm管理项目中尝试一下~
 > 本文项目已推送至GitHub，欢迎克隆演示：`git clone https://github.com/OSpoon/release-it-demo.git`
-
-<Comment />
