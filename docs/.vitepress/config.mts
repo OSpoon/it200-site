@@ -8,9 +8,7 @@ export default defineConfig({
   title: "前端小鑫同学",
   description: "🏅InfoQ签约作者",
   lastUpdated: true,
-  sitemap: {
-    hostname: "https://it200.cn",
-  },
+  cleanUrls: true,
   themeConfig: {
     logo: "/logo.png",
     siteTitle: "前端小鑫同学",
@@ -35,5 +33,7 @@ export default defineConfig({
         'Copyright © <a target="_blank" href="https://beian.miit.gov.cn">晋ICP备15003329号-3</a>',
     },
   },
-  vite: {},
+  vite: {
+    plugins: [],
+  },
 });
