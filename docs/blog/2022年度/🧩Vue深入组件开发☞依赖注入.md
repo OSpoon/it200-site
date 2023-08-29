@@ -1,27 +1,8 @@
----
-title: 🧩 Vue 深入组件开发☞#依赖注入#
-date: '2022-06-10 23:49'
-sidebar: 'auto'
-categories:
- - Vue
-tags:
- - Component
----
-
+# 🧩 Vue 深入组件开发☞#依赖注入#
 
 :::tip
 >🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
-
-:::tip
-本次演示环境：Vue3、组合式 API、TypeScript
-:::
-
-<!-- more -->
-
-## 前言
-
-大家好，我是[小鑫同学](https://it200.cn/ "https://it200.cn/")。一位从事过**Android开发**、**混合开发**，现在长期从事**前端开发**的编程爱好者，**我觉得在编程之路上最重要的是知识的分享，所谓三人行必有我师**。所以我开始在社区持续输出我所了解到、学习到、工作中遇到的各种编程知识，欢迎有想法、有同感的伙伴加我[fe-xiaoxin](https://it200.cn/ "https://it200.cn/")微信交流~
 
 ## 学习内容：
 
@@ -36,11 +17,11 @@ tags:
 
 
 
-![props-v1.gif](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/23b97f565a784a308ddff0a5e65bca57~tplv-k3u1fbpfcp-watermark.image?)
+![props-v1.gif](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291022695.gif)
 
 下面的这张图解释了我们可以在 Root 组件通过 provide 来注入数据，在 DeepChild 组件中通过 Inject 来注入对应的 key，就可以将数据顺利的从 Root 传递到 DeepChild。
 
-![props-v2.gif](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7b537e2b24c1485abb7f973ac1bde432~tplv-k3u1fbpfcp-watermark.image?)
+![props-v2.gif](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291023358.gif)
 
 ## 使用 Provide 定义数据：
 
@@ -240,9 +221,3 @@ const { text, updateText } = inject(message) as {
 ## 结语：
 
 本篇通过对 Vue 文档的再熟悉并使用组合式 API 来演示了依赖注入的使用方式和一些注意事项，希望在后续开发中可以有所体现，实践是巩固技术的良好途径。明天继续~
-
-* * *
-
-**如果看完觉得有收获，欢迎点赞、评论、分享支持一下。你的支持和肯定，是我坚持写作的动力~**
-
-最后可以关注我@小鑫同学。欢迎[点此扫码加我微信](https://it200.cn/ "https://it200.cn/")[fe-xiaoxin](https://it200.cn/ "https://it200.cn/")交流，共同进步（还可以帮你**fix**🐛）~

@@ -1,18 +1,10 @@
----
-title: 🚀使用“release-it”一气呵成：version、tag、changelog 。。。
-date: '2022-10-23 22:47'
-tags:
- - release-it
-description: 使用release-it可以进行版本管理，并通过默认提供的配置文件、三方插件和Hooks等功能执行测试、构建、发布等项目内置的任何命令，并进行发布~
----
-
 # 🚀使用“release-it”一气呵成：version、tag、changelog 。。。
 
 :::tip
 >🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
 
-> 使用release-it可以进行版本管理，并通过默认提供的配置文件、三方插件和Hooks等功能执行测试、构建、发布等项目内置的任何命令，并进行发布~
+使用release-it可以进行版本管理，并通过默认提供的配置文件、三方插件和Hooks等功能执行测试、构建、发布等项目内置的任何命令，并进行发布~
 
 ## 功能列表：
 
@@ -56,15 +48,15 @@ f. 询问是否推送到远程仓库；
 
 1. 执行`npm run release`后终端截图：
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/93965d44497a49bc9a478b808ba5d3b9~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291015050.png)
 
 2. 发布在**Github**上增加了`tag`并增加了`tag`对应的`release`版本：
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/79f2edb0795b4998a1793cff0e9c4f2d~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291015570.png)
 
 3. 在NPM仓库看到`0.0.2`版本的包已经成功发布：
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/168ebac4e7274c819d13c55b8a3ead59~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291015719.png)
 ### 2.4 简单总结一下：
 通过运行`release-it`命令成功更新了项目版本号、推送到NPM，增加对应版本的TAG并推送到了Github，还增加了对应的release版本，使用`release-it`节省了很多我们需要单独操作的一些步骤。
 ## 3. 规范/查看 changelog：
@@ -84,14 +76,14 @@ f. 询问是否推送到远程仓库；
 
 3. 运行`npm run commit`前请将变更文件添加暂存；
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9e6592ec65354b64bfc8b02815e506d2~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291015439.png)
 ### 3.2 使用release-it查看changelog：
 > 因为changelog文件只有在使用`release-it`命令后才会去发生变更，仅仅是为了查看而不需要发布可以按下面命令操作~
 
 执行命令：`npx release-it --changelog`；
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/604da765c7574bfd9938fbe62775c641~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291015343.png)
 执行命令：`npx release-it --release-version`；可以查看下一个该发布的版本号；
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/158f4e31dbab4aea9a92df3c274864df~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291016388.png)
 ## 4. 友好的持续集成：
 > 在前面执行release-it命令是我们使用的是默认的交互模式来由我们手动确定每一步的操作，在CI过程中我们需要改变一下这样的交互方式
 
@@ -124,16 +116,16 @@ f. 询问是否推送到远程仓库；
 1. 添加变更文件到暂存；
 2. 执行git-cz：`npm run commit`；
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c39efeafe097429d9c0ea9821974702d~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291016324.png)
 
 3. 再次执行`release-it`：
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d050981689284e518a898e85d4f76528~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291016355.png)
 
 4. 点击最后生成的GitHub Release地址后跳转到下面页面，我们只需要点击一下就可以完成版本发布了~
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e112b2b34d1c49c1bac08e3314ba5962~tplv-k3u1fbpfcp-zoom-1.image)
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/997c1e36dd2c4df38ea038da80fe8275~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291016788.png)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291016843.png)
 ## 5. 生成CHANGELOG.md：
 > 在前面的操作过程中我们成功的生成的主流的changelog内容，但是缺少一下汇总的MD文件，我们通过一个插件来完成这件事情~
 
@@ -166,10 +158,10 @@ f. 询问是否推送到远程仓库；
 
 3. 增加对应的模块后我们尝试在`src/index.js`再增加一个函数，并将这一切统统提交到`git`仓库，只有feat和fix两种标识的变更会被记录到CHANGELOG.md文件中；
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a24f02143106476fa40ff9ade5725946~tplv-k3u1fbpfcp-zoom-1.image)
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/20ee34b2f246498cabe1a89763c8b3b1~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291017467.png)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291017102.png)
 更多插件可以查看[release-it Plugins](https://github.com/release-it/release-it#plugins)~
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a33f2b8a441247519b3eda6013478122~tplv-k3u1fbpfcp-zoom-1.image)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291017358.png)
 ## 6. 总结
 上面我们演示了使用`release-it`的很多功能，基本可以完成我们大多数项目的自动发布、打Tag、生成变更日志等工作，在[release-it Plugins](https://github.com/release-it/release-it#plugins)中还提供了一些比较不错的插件可以试用一下，比如说 [lerna-changelog](https://github.com/release-it-plugins/lerna-changelog) 和 [workspaces](https://github.com/release-it-plugins/workspaces) 等，期待在pnpm管理项目中尝试一下~
 > 本文项目已推送至GitHub，欢迎克隆演示：`git clone https://github.com/OSpoon/release-it-demo.git`

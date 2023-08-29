@@ -2,14 +2,6 @@ import { defineConfig } from "vitepress";
 import { sidebar } from "./sidebarConfig.mjs";
 import { nav } from "./navConfig.mjs";
 
-import { RssPlugin, RSSOptions } from "vitepress-plugin-rss";
-const baseUrl = "https://ospoon.github.io";
-const RSS: RSSOptions = {
-  title: "前端小鑫同学",
-  baseUrl,
-  copyright: "Copyright © 晋ICP备15003329号-3",
-};
-
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "/it200-site/",
@@ -43,7 +35,5 @@ export default defineConfig({
         'Copyright © <a target="_blank" href="https://beian.miit.gov.cn">晋ICP备15003329号-3</a>',
     },
   },
-  vite: {
-    plugins: [RssPlugin(RSS)],
-  },
+  vite: {},
 });

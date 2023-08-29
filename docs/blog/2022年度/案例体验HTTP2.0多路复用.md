@@ -140,16 +140,16 @@ server.listen(8443, () => {
 ```
 #### 1.3.2 开启版本协议查看：
 使用**Chrome**浏览器通过NetWork来观察网络请求情况时默认不支持协议版本的查看，或者查看不方便，这里可以启用一下：
-![开启Chrome中协议版本查看.gif](https://cdn.nlark.com/yuque/0/2022/gif/2373519/1668328362230-d9759bc7-a3fd-4a2f-8cfd-f01a78139de4.gif#averageHue=%233e895a&clientId=u21fc4a71-d2b8-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=739&id=ua4139bc7&margin=%5Bobject%20Object%5D&name=%E5%BC%80%E5%90%AFChrome%E4%B8%AD%E5%8D%8F%E8%AE%AE%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B.gif&originHeight=739&originWidth=536&originalType=binary&ratio=1&rotation=0&showTitle=false&size=223765&status=done&style=none&taskId=ubf97e3a6-5e96-4d8b-b62c-9d7247b2cf5&title=&width=536)
+![开启Chrome中协议版本查看.gif](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291001746.gif)
 #### 1.3.3 调整浏览器网络请求速度：
 在浏览器中调整网速来模拟慢网络下数据加载，方便观察请求的访问情况；
-![切换网络速度.gif](https://cdn.nlark.com/yuque/0/2022/gif/2373519/1668328616248-3d64c1cc-d132-4bd9-93a3-58f37d05b801.gif#averageHue=%23f0f1f2&clientId=u21fc4a71-d2b8-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=296&id=u955f5242&margin=%5Bobject%20Object%5D&name=%E5%88%87%E6%8D%A2%E7%BD%91%E7%BB%9C%E9%80%9F%E5%BA%A6.gif&originHeight=296&originWidth=1147&originalType=binary&ratio=1&rotation=0&showTitle=false&size=151966&status=done&style=none&taskId=u618ab14f-fc06-4d65-9c16-ecd429504af&title=&width=1147)
+![切换网络速度.gif](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291001621.gif)
 #### 1.3.4 查看HTTP1.1下网络请求数限制：
 在1.1版本中很明显看到网络在分批加载并且后续的网络需要等待前面网络请求完成后开始；
-![nodejs-http1.1版本请求观察.gif](https://cdn.nlark.com/yuque/0/2022/gif/2373519/1668328814826-4212dc28-c3a1-4004-b5e0-8e1dc232d8b3.gif#averageHue=%23fbfbfb&clientId=u21fc4a71-d2b8-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=888&id=u198f3c24&margin=%5Bobject%20Object%5D&name=nodejs-http1.1%E7%89%88%E6%9C%AC%E8%AF%B7%E6%B1%82%E8%A7%82%E5%AF%9F.gif&originHeight=888&originWidth=1908&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3156772&status=done&style=none&taskId=ud1ae519b-8643-4990-b7e0-5655c826d54&title=&width=1908)
+![nodejs-http1.1版本请求观察.gif](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291001905.gif)
 #### 1.3.5 查看HTTP2.0下网络请求同时进行：
 在2.0版本中看到几乎所有的请求都在同一时间发起，充分利用网络带宽的优势来同服务器进行数据的交换；
-![nodejs-http2.0版本请求观察.gif](https://cdn.nlark.com/yuque/0/2022/gif/2373519/1668329399417-51f73b6e-975f-4e20-9296-7eb9490a90bd.gif#averageHue=%23fcfcfc&clientId=u21fc4a71-d2b8-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=888&id=u64b9d5b4&margin=%5Bobject%20Object%5D&name=nodejs-http2.0%E7%89%88%E6%9C%AC%E8%AF%B7%E6%B1%82%E8%A7%82%E5%AF%9F.gif&originHeight=888&originWidth=1908&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3515811&status=done&style=none&taskId=uab8d84dd-ce8d-4521-a944-9b70d7ea814&title=&width=1908)
+![nodejs-http2.0版本请求观察.gif](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291002438.gif)
 ## 2. 为Nginx开启HTTP2.0：
 Nginx版本和OpenSSL版本都有一定的要求，在实战使用时请注意版本问题，目前我在Win本上使用的Nginx版本是`1.22.1`，OpenSSL版本是`1.1.1k  25 Mar 2021`；
 ```
@@ -202,15 +202,15 @@ server {
 在启动Nginx服务后，重新观察`[http://localhost/](http://localhost/)`、`[https://localhost/](https://localhost/)`在NetWork请求情况可以得到了NodeJs版本相同的结果；
 ## 3. 已升级HTTP2.0版本网站：
 ### 3.1 百度图片搜索：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668331994737-4761a532-a280-46a9-af8b-0428402dba45.png#averageHue=%236b8258&clientId=u21fc4a71-d2b8-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=929&id=u6ed4e607&margin=%5Bobject%20Object%5D&name=image.png&originHeight=929&originWidth=1919&originalType=binary&ratio=1&rotation=0&showTitle=false&size=990473&status=done&style=none&taskId=u0b151eb1-ecbe-4ea3-948d-4b4c806e7e8&title=&width=1919)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291002739.png)
 ### 3.2 微博主页：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668332129798-d6448a42-f267-4158-9e48-0103a57cf690.png#averageHue=%239f8f6f&clientId=u21fc4a71-d2b8-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=926&id=u930680ef&margin=%5Bobject%20Object%5D&name=image.png&originHeight=926&originWidth=1919&originalType=binary&ratio=1&rotation=0&showTitle=false&size=505558&status=done&style=none&taskId=u8f3c6994-80bf-40ab-9c4b-628bd9acbfa&title=&width=1919)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291003088.png)
 ### 3.3. 今天头条主页：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668332188970-39cc31a4-4262-4479-810d-e8a8427a4931.png#averageHue=%238e8d5d&clientId=u21fc4a71-d2b8-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=928&id=u5a4b8757&margin=%5Bobject%20Object%5D&name=image.png&originHeight=928&originWidth=1919&originalType=binary&ratio=1&rotation=0&showTitle=false&size=278236&status=done&style=none&taskId=u04b84cc1-7954-4c47-ba90-0a1704e26f5&title=&width=1919)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291003300.png)
 ### 3.4 稀土掘金主页：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668332029628-00d55d94-74b2-496d-8c03-7c67b52118d4.png#averageHue=%23d5bc9a&clientId=u21fc4a71-d2b8-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=929&id=u458f4de3&margin=%5Bobject%20Object%5D&name=image.png&originHeight=929&originWidth=1919&originalType=binary&ratio=1&rotation=0&showTitle=false&size=291224&status=done&style=none&taskId=uf5d36466-23b5-4f38-a773-19ef8768e60&title=&width=1919)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291003474.png)
 ### 3.5 InfoQ主页：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1668332075600-4b7c5ebe-078e-4ac1-acb0-0aae04377fa8.png#averageHue=%23beac8f&clientId=u21fc4a71-d2b8-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=930&id=ufa5095c0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=930&originWidth=1919&originalType=binary&ratio=1&rotation=0&showTitle=false&size=641192&status=done&style=none&taskId=u6fbdf78e-5997-4a4e-be8d-b2839a62d78&title=&width=1919)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202308291004596.png)
 ## 总结
 通过案例对比似乎发现HTTP2.0版本的协议似乎并没有启到什么效果，但是网络的优化也需要方方面面的考虑，在主流网站几乎全部支持了HTTP2.0时候我觉得有必要考虑将自己还没有升级2.0的网站提上日程。
 更好的体验HTTP2优势的案例参照：[https://http2.akamai.com/demo](https://http2.akamai.com/demo)；
