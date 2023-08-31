@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: 系列开发教程
       link: /document/readme
+    - theme: alt
+      text: 编程导航
+      link: /navigation
 
 features:
   - title: 💡 梦想
