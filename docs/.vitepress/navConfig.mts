@@ -36,5 +36,9 @@ export async function nav(): Promise<DefaultTheme.NavItem[]> {
       text: "编程导航",
       items: await genNavItems(navigation),
     },
+    {
+      text: "书签",
+      link: "/bookmark",
+    },
   ];
 }
