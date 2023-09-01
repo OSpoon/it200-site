@@ -4,7 +4,7 @@ import { nav } from "./navConfig.mjs";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/it200-site/",
+  // base: "/it200-site/",
   title: "前端小鑫同学",
   description: "🏅InfoQ签约作者",
   lastUpdated: true,
