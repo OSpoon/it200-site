@@ -63,3 +63,18 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+  
+  # PushOSS job
+  auto-push-2-oss:
+    needs: build
+    runs-on: ubuntu-latest
+    name: PushOSS
+    steps:
+      - name: Push to IT200.cn
+        uses: OSpoon/auto-push-oss@main
+        with:
+          root: docs/.vitepress/dist
+          bucket: it200
+          region: oss-cn-beijing
+          accessKeyId: ${{secrets.accessKeyId}}
+          accessKeySecret: ${{secrets.accessKeySecret}}

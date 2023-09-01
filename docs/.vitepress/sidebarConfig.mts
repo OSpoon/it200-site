@@ -3,7 +3,7 @@ import { type DefaultTheme } from "vitepress";
 import fs from "fs-extra";
 import path from "node:path";
 
-const paths = ["blog", "document"];
+const paths = ["blog", "document", "navigation"];
 
 export async function sidebar(): Promise<DefaultTheme.Sidebar> {
   const sidebar = paths

@@ -5,6 +5,7 @@ import path from "node:path";
 
 const blog = "blog";
 const document = "document";
+const navigation = "navigation";
 
 async function genNavItems(dir) {
   const root = path.resolve(__dirname, `../${dir}`);
@@ -33,7 +34,7 @@ export async function nav(): Promise<DefaultTheme.NavItem[]> {
     },
     {
       text: "编程导航",
-      link: "/navigation",
+      items: await genNavItems(navigation),
     },
   ];
 }
