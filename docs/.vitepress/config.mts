@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import { sidebar } from "./sidebarConfig.mjs";
 import { nav } from "./navConfig.mjs";
+import { pagefindPlugin } from "vitepress-plugin-pagefind";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -34,6 +35,13 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [],
+    plugins: [pagefindPlugin({
+      customSearchQuery(input){
+        // 将搜索的每个中文单字两侧加上空格
+        return input.replace(/[\u4e00-\u9fa5]/g, ' $& ')
+        .replace(/\s+/g,' ')
+        .trim();
+      }
+    })],
   },
 });
