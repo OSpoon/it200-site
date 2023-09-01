@@ -16,3 +16,8 @@
 * [Ethereum API | IPFS API & Gateway | ETH Nodes as a Service | Infura](https://app.infura.io/dashboard)
 * [Remix - Ethereum IDE](https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null)
 * [Excalidraw](https://handraw.top)
+* [【干货】Chrome插件(扩展)开发全攻略 - 我是小茗同学 - 博客园](https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html)
+* [给想玩AIGC的小白：教你从0搭一个图文视频生成网站（附插件&源码）](https://mp.weixin.qq.com/s/22gbSI1hq6KQV35UcWvDhw)
+* [登录 - OpenI - 启智AI开源社区提供普惠算力！](https://openi.pcl.ac.cn/user/login)
+* [Rollup 中文文档 | Rollup 中文文档](https://cn.rollupjs.org)
+* [RxJS 中文版](https://rxjs.tech)
