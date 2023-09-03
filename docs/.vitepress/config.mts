@@ -6,13 +6,13 @@ import { pagefindPlugin } from "vitepress-plugin-pagefind";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   // base: "/it200-site/",
-  title: "前端小鑫同学",
+  title: "爱学习IT200.cn",
   description: "🏅InfoQ签约作者",
   lastUpdated: true,
   cleanUrls: true,
   themeConfig: {
     logo: "/logo.png",
-    siteTitle: "前端小鑫同学",
+    siteTitle: "爱学习IT200.cn",
     externalLinkIcon: true,
     docFooter: {
       prev: " 上一页",

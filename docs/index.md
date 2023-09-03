@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "前端小鑫同学"
-  text: "🏆InfoQ签约作者"
-  tagline: 专注前端技术布道，所有付出都将是沉淀，所有美好终会如期而至~
+  name: "爱学习IT200.cn"
+  text: "InfoQ签约作者🏆"
+  tagline: 我是前端小鑫同学，专注前端技术，热衷知识分享
   image:
     src: /logo.png
     alt: 前端小鑫同学
