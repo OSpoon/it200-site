@@ -1,14 +1,9 @@
 # 📢利用Vite插件助力证书安装
 
 :::tip
-在以前的一篇文章中讲述了在前端开发时通过配置自签名证书来完成必须使用HTTPS协议才能工作的功能。那么当你同时需要在手机端预览的时候，可能就要将公钥证书也安装到手机上了，但无论你通过什么方式将证书发送到手机中都不如我写的这个`Vite`插件使用着方便，那么一起来看一下我是怎么做的~
+>🎄Hi~ 大家好，我是小鑫同学，资深 IT 从业者，InfoQ 的签约作者，擅长前端开发并在这一领域有多年的经验，致力于分享我在技术方面的见解和心得
 :::
 
-<!-- more -->
-
-> 大家好，我是[小鑫同学](https://it200.cn/)。一位长期从事**前端开发**的编程爱好者，**我信奉编程最重要的是分享**。请跟随小鑫同学的步伐，一起带你畅游不一样的前端世界~
-
-## 1. 前言
 在以前的一篇文章中讲述了在前端开发时通过配置自签名证书来完成必须使用HTTPS协议才能工作的功能。那么当你同时需要在手机端预览的时候，可能就要将公钥证书也安装到手机上了，但无论你通过什么方式将证书发送到手机中都不如我写的这个`Vite`插件使用着方便，那么一起来看一下我是怎么做的~
 
 ## 2. 添加调试Vite环境配置
@@ -17,15 +12,16 @@
 1. 在项目根目录创建名为`.vscode/launch.json`调试环境配置文件；
 2. 在调试窗口右下角点击添加配置，并选择 `Node.js：Launch via NPM`；
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1667403219976-f2fbe4e0-6ce0-48db-9086-8b80a2276911.png#clientId=u4220073d-b439-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&id=VQhe5&margin=%5Bobject%20Object%5D&name=image.png&originHeight=458&originWidth=1366&originalType=url&ratio=1&rotation=0&showTitle=false&size=46087&status=error&style=none&taskId=u08d36c2a-7403-4d99-b530-a9a7e2260d4&title=)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202309011647779.png)
 
 3. 调整增加的 `Launch via NPM` 配置以适合当前项目：
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1667403232664-697a7d72-8397-4331-b7fd-e0da46446028.png#clientId=u4220073d-b439-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&id=u93aa99b2&margin=%5Bobject%20Object%5D&name=image.png&originHeight=422&originWidth=724&originalType=url&ratio=1&rotation=0&showTitle=false&size=26798&status=error&style=none&taskId=uc526244a-51db-47bb-aea3-38f11732d93&title=)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202309011647696.png)
 
 4. 在`vite.config.ts`的起始位置打断点后通过调试窗口运行 `Launch via NPM` 配置，运行成功后将停留的目标断点处；
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1667403255689-66a5efa3-353a-4cc8-820c-b7cd848a521f.png#clientId=u4220073d-b439-4&crop=0&crop=0&crop=1&crop=1&errorMessage=unknown%20error&from=paste&id=u9754bea9&margin=%5Bobject%20Object%5D&name=image.png&originHeight=902&originWidth=1355&originalType=url&ratio=1&rotation=0&showTitle=false&size=234852&status=error&style=none&taskId=u107a01c2-98e7-4540-9777-6bb7b7ac9ef&title=)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202309011648587.png)
+
 到这里就成功进入断点了，怎么样，你配置好了吗~ 🤺
 ## 3. Vite插件模板及基本配置
 首先我们在项目根目录下增加名为`plugins/vite-plugin-certificate-install.ts`的插件文件；
@@ -139,7 +135,7 @@ server.middlewares.use((req, res, next) => {
 ```
 ### 4.3 准备签名文件后启动Vite开发服务：
 在项目根目录的`keys`目录下放置`agent2.pem`证书，执行`npm run dev`启动Vite开发服务：
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/2373519/1667487256513-14a0d54a-0af7-4cde-a1be-47f7d6d4ace0.png#clientId=u831a7f8b-1f29-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=uc68d0375&margin=%5Bobject%20Object%5D&name=image.png&originHeight=511&originWidth=536&originalType=url&ratio=1&rotation=0&showTitle=false&size=36449&status=done&style=none&taskId=uc3e65299-ad1e-4496-89d8-a08a59273f6&title=)
+![image.png](https://picgo-2022.oss-cn-beijing.aliyuncs.com/202309011649393.png)
 ## 5. Vite插件打包分发
 在插件打包时我们还是要考虑到使用者非TypeScript开发环境，所以需要转为JavaScript后进行分发，tsup模块利用esbuild在不需要任何配置的情况下就可以对Ts进行编译。
 需要在项目中安装tsup到开发依赖，请不要直接通过npx使用，可能会因为找不到typescript模块而终止掉部分编译流程；
@@ -160,8 +156,3 @@ $ yo vite-plugin
 ```
 ## 7. 总结
 利用Vite提供的开发服务器钩子，我们实现了固定地址的拦截，并将自签名证书写回到手机端并触发证书安装。还通过重写Vite内置的printUrls函数实现了服务启动后将证书获取地址的二维码打印到终端，在最后还提供了`generator-vite-plugin`插件来快速编写Vite插件，欢迎体验使用~
-
----
-
-**如果看完觉得有收获，欢迎点赞、评论、分享支持一下。你的支持和肯定，是我坚持写作的动力~**
-最后可以关注我@小鑫同学。欢迎[点此扫码加我微信](https://juejin.cn/pin/7126196941574111262)[fe-xiaoxin](https://it200.cn/)交流，共同进步（还可以帮你**fix**🐛）~
