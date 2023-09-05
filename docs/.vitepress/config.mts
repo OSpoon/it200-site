@@ -10,6 +10,19 @@ export default defineConfig({
   description: "🏅InfoQ签约作者",
   lastUpdated: true,
   cleanUrls: true,
+  head: [
+    [
+      "script",
+      {},
+      `var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?35d1c7fdb4d22fb3e38125dbdbead3fe";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();`
+    ]
+  ],
   themeConfig: {
     logo: "/logo.png",
     siteTitle: "爱学习IT200.cn",
