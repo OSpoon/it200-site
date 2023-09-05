@@ -6,8 +6,8 @@ export default {
   enhanceApp: (ctx: EnhanceAppContext) => {
     const { router } = ctx;
     router.onAfterRouteChanged = (to: string) => {
-      if (window["_hmt"]) {
-        window["_hmt"].push(["_trackPageview", decodeURIComponent(to)]);
+      if (globalThis["_hmt"]) {
+        globalThis["_hmt"].push(["_trackPageview", decodeURIComponent(to)]);
       }
     };
   },
