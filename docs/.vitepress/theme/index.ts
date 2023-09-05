@@ -7,7 +7,6 @@ export default {
     const { router } = ctx;
     router.onAfterRouteChanged = (to: string) => {
       if (window["_hmt"]) {
-        console.log(decodeURIComponent(to))
         window["_hmt"].push(["_trackPageview", decodeURIComponent(to)]);
       }
     };
